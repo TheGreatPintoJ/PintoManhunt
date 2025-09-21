@@ -1,0 +1,5 @@
+name: PintoManhunt
+version: '1.0-SNAPSHOT'
+main: me.pintoadmin.pintoManhunt.PintoManhunt
+api-version: '1.21'
+authors: [ PintoJ ]
