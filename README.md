@@ -17,7 +17,7 @@ PintoManhunt is a Minecraft plugin for running customizable Manhunt games, inspi
 1. Place the `PintoManhunt.jar` file in your server's `plugins` folder.
 2. Start or restart your Minecraft server.
 3. (Optional) Use the [Multiverse-NetherPortals](https://dev.bukkit.org/projects/multiverse-netherportals) plugin to link Nether and End worlds for proper portal functionality.
-without it, any nether portals will send the player to world_the_nether and any end portals will send the player to world_the_end.
+Without it, any nether portals will send the player to world_the_nether and any end portals will send the player to world_the_end.
 
 ## Commands
 
