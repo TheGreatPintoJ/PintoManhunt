@@ -3,3 +3,9 @@ version: '1.0-SNAPSHOT'
 main: me.pintoadmin.pintoManhunt.PintoManhunt
 api-version: '1.21'
 authors: [ PintoJ ]
+commands:
+  manhunt:
+    description: Main command for PintoManhunt plugin
+    usage: /manhunt <create|remove|join|leave|status|start> [args]
+    permission: pintomanhunt.use
+    permission-message: You do not have permission to use this command.
