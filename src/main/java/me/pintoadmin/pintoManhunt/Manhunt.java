@@ -175,6 +175,17 @@ public class Manhunt {
         }
         world.setGameRule(GameRule.DO_IMMEDIATE_RESPAWN, false);
 
+        for(Player player : getAllPlayers()){
+            player.getInventory().clear();
+            player.setCompassTarget(player.getWorld().getSpawnLocation());
+            CompassMeta meta = (CompassMeta) new ItemStack(Material.COMPASS).getItemMeta();
+            meta.setLodestone(player.getWorld().getSpawnLocation());
+            meta.setLodestoneTracked(false);
+            ItemStack compass = new ItemStack(Material.COMPASS);
+            compass.setItemMeta(meta);
+            player.teleport(player.getWorld().getSpawnLocation());
+        }
+
         new BukkitRunnable(){
             @Override
             public void run() {
