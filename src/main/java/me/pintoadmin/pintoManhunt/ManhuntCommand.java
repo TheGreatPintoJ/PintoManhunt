@@ -103,8 +103,8 @@ public class ManhuntCommand implements CommandExecutor {
                 }
                 break;
             case "leave":
-                if(args.length != 2){
-                    sender.sendMessage("Usage: /manhunt leave <UUID>");
+                if(args.length != 1){
+                    sender.sendMessage("Usage: /manhunt leave");
                     return true;
                 }
                 if(!game.getSpeedrunners().contains(player) && !game.getHunters().contains(player) && !game.getSpectators().contains(player)){
