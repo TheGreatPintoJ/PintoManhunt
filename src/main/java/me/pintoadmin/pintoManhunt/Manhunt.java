@@ -27,7 +27,7 @@ public class Manhunt {
     private World end;
 
     private String gameState; // e.g., "waiting", "started", "ended"
-    private String gameType;
+    private String gameType; // TODO: Add game types
 
     private long timer; // in seconds
 
@@ -256,7 +256,7 @@ public class Manhunt {
                         double distance = player.getLocation().distance(new Location(player.getWorld(), location.getX(), location.getY(), location.getZ()));
                         if (distance < nearestDistance) {
                             nearestDistance = distance;
-                            nearestSpeedrunner = speedrunner;
+                            nearestSpeedrunner = speedrunner; // TODO: Select the speedrunner to point to
                         }
                     }
                     if (nearestSpeedrunner != null && nearestSpeedrunner.getWorld() == player.getWorld()) {
