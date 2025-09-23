@@ -23,6 +23,9 @@ public class Manhunt {
     private List<Player> spectators = new ArrayList<>();
 
     private World world;
+    private boolean START_pvp;
+    private boolean START_daylight;
+    private boolean START_weather;
     private World nether;
     private World end;
 
@@ -40,6 +43,10 @@ public class Manhunt {
         this.speedrunners.add(startingSpeedrunner);
         this.world = startingSpeedrunner.getWorld();
         this.hunters = new ArrayList<>();
+
+        START_pvp = world.getPVP();
+        START_daylight = world.getGameRuleValue(GameRule.DO_DAYLIGHT_CYCLE);
+        START_weather = world.getGameRuleValue(GameRule.DO_WEATHER_CYCLE);
 
         checkWorlds();
         gameState = "waiting";
@@ -201,6 +208,10 @@ public class Manhunt {
         allPlayers.clear();
         gameState = "ended";
         PintoManhunt.getPlugin(PintoManhunt.class).activeGames.remove(this);
+
+        world.setPVP(START_pvp);
+        world.setGameRule(GameRule.DO_DAYLIGHT_CYCLE, START_daylight);
+        world.setGameRule(GameRule.DO_WEATHER_CYCLE, START_weather);
     }
 
     public void startTimer() {
