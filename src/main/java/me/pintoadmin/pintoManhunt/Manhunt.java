@@ -244,6 +244,14 @@ public class Manhunt {
                     }
                 }.runTaskLater(PintoManhunt.getPlugin(PintoManhunt.class), 5L); // 1/4 second delay before respawn and end of game
             }
+        } else if(hunters.contains(deceased)){
+            new BukkitRunnable(){
+                @Override
+                public void run() {
+                    deceased.spigot().respawn();
+                    deceased.getInventory().addItem(new ItemStack(Material.COMPASS));
+                }
+            }.runTaskLater(PintoManhunt.getPlugin(PintoManhunt.class), 5L); // 1/4 second delay before respawn
         }
     }
     public void onPlayerAdvancement(PlayerAdvancementDoneEvent event){
